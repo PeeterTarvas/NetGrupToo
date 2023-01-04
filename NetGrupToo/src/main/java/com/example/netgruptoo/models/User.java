@@ -1,14 +1,14 @@
 package com.example.netgruptoo.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
 @Setter
 @Getter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "user", schema = "data")
 public class User {
 
@@ -38,7 +38,7 @@ public class User {
     private Long number_of_items;
 
     @Column
-    private Long cost;
+    private Double cost;
 
 
     @Override

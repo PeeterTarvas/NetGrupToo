@@ -1,10 +1,29 @@
 package com.example.netgruptoo.repositories;
 
 import com.example.netgruptoo.models.Catalogue;
-import com.example.netgruptoo.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface CatalogueRepository extends JpaRepository<Catalogue, Integer> {
+
+    @Query(value = "SELECT MAX(catalogue_id) + 1 AS user_id FROM data.catalogue ", nativeQuery = true)
+    Long findNextId();
+
+    @Query(value = "SELECT * FROM data.catalogue WHERE catalogue_owner = :owner AND catalogue_name = :catalogueName",
+            nativeQuery = true)
+    Catalogue findByCatalogue_nameAndCatalogue_owner(String catalogueName, String owner);
+
+    @Query(value = "SELECT * FROM data.catalogue WHERE catalogue_owner = :username ORDER BY catalogue_id LIMIT 1",nativeQuery = true)
+    Catalogue findInitalUserCatalogue(String username);
+
+    @Query(value = """
+            SELECT * FROM (
+                            SELECT child_catalogue_id FROM data.catalogue_catalogue_reference WHERE parent_catalogue_id = :parentId
+                            ) as ccrcci, data.catalogue as catalogue WHERE ccrcci.child_catalogue_id = catalogue.catalogue_id"""
+            ,nativeQuery = true)
+    List<Catalogue> findAllByParentId(Long parentId);
 }

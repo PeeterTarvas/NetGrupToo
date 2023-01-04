@@ -3,9 +3,7 @@ import {Link, useNavigate} from 'react-router-dom';
 
 interface ButtonInterface {
     name: string,
-    link: string;
     id: string,
-
 }
 
 const Button:React.FC<ButtonInterface> = (props) => {

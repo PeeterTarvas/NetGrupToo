@@ -2,6 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from "./Pages/HomePage";
 import RegisterPage from "./Pages/RegisterPage";
 import MainPage from "./Pages/MainPage";
+import CatalogueForm from "./Pages/CatalogueForm";
+import ProductForm from "./Pages/ProductForm";
+import AdminPage from "./Pages/AdminPages/AdminPage";
 
 const Main = () => {
 
@@ -10,7 +13,10 @@ const Main = () => {
             <Route path={"/*"}>
              <Route index element={<HomePage/>} />
              <Route path='register' element={<RegisterPage/>} />
-             <Route path={'main'} element={<MainPage/>} />
+             <Route path='main' element={<MainPage/>} />
+             <Route path='catalogueForm' element={<CatalogueForm/>} />
+             <Route path='productForm' element={<ProductForm/>} />
+                <Route path='adminMain' element={<AdminPage/>}/>
             </Route>
         </Routes>
 );

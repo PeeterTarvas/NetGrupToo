@@ -2,14 +2,14 @@ package com.example.netgruptoo.models;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
 @Setter
 @Getter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "product", schema = "data")
 public class Product {
 
@@ -19,19 +19,24 @@ public class Product {
     private Long product_id;
 
     @Column
-    private Long name;
+    private String name;
 
     @Column
-    private Long serial_number;
+    private String serial_number;
 
     @Column
     private String picture_link;
 
     @Column
-    private Long product_owner;
+    private String product_owner;
 
     @Column
-    @Enumerated(EnumType.STRING)
-    private Condition product_condition;
+    private String condition;
+
+    @Column
+    private String description;
+
+    @Column
+    private Long amount;
 
 }

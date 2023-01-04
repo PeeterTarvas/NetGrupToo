@@ -16,28 +16,36 @@ const HomePage = () => {
         let userDto: UserDto = {
             username: name,
             password: password,
-            email: null,
-            role: null,
-            referenceUserUsername: null,
+            email: undefined,
+            role: undefined,
+            referenceUserUsername: undefined,
+            maximum_items: undefined,
+            cost: undefined,
+            number_of_items: undefined,
         }
         const resp = await connectHandler.getInfo("/user", userDto)
         if (resp.status === 200) {
             setauthenticated(true)
             userDto = resp.data
-            navigate("/main", {state: {user: userDto}})
+            if (userDto.role !== "ROLE_ADMIN") {
+                navigate("/main", {state: {user: userDto}})
+            } else {
+                navigate("/adminMain", {state: {user: userDto}})
+
+            }
         }
     }
 
     return (
         <div className={"grid-rows-1 gap-5 self-center content-center p-10  justify-centre justify-self-center bg-gray-500 w-2/3 h-2/3"}>
 
-            <div><TextField value={name} setValue={setName} id={"username"} type={'text'} placeholder={'Username'}/></div>
-            <div><TextField value={password} setValue={setPassword} id={"password"} type={'password'} placeholder={'Password'}/></div>
-            <div onClick={(e:any) => onClickHandle(name, password)}><Button link={"/main"} id={"login"}  name={"Login"}/></div>
+            <div><TextField value={name} setNumberValue={undefined} setStringValue={setName} id={"username"} type={'text'} placeholder={'Username'}/></div>
+            <div><TextField value={password} setNumberValue={undefined} setStringValue={setPassword} id={"password"} type={'password'} placeholder={'Password'}/></div>
+            <div onClick={(e:any) => onClickHandle(name, password)}><Button id={"login"}  name={"Login"}/></div>
 
 
             <div>If you don't have an account then register</div>
-            <div> <Button id={"register"} link={"/register"} name={"Register"}/></div>
+            <div onClick={() => navigate('/register')}> <Button id={"register"} name={"Register"}/></div>
         </div>
     )
 }

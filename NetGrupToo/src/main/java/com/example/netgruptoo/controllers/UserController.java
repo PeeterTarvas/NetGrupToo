@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -36,5 +37,15 @@ public class UserController {
             UserDto userDto = userService.constructUserDtoWithUser(userValid);
             return new ResponseEntity<UserDto>(userDto, HttpStatus.OK);
         } return new ResponseEntity<UserDto>(HttpStatus.BAD_REQUEST);
+    }
+
+    @GetMapping("/users")
+    public List<UserDto> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    @PutMapping("/update")
+    public List<UserDto> updateUser(@RequestBody UserDto userDto) {
+        return userService.setUsersMaxItems(userDto);
     }
 }

@@ -4,8 +4,10 @@ interface TextFiledInterface {
     type: string,
     placeholder: string,
     id: string,
-    value: string,
-    setValue: React.Dispatch<React.SetStateAction<string>>,
+    value: string|undefined|number,
+    setStringValue: React.Dispatch<React.SetStateAction<string>>|undefined,
+    setNumberValue: React.Dispatch<React.SetStateAction<number>>|undefined,
+
 
 }
 
@@ -16,12 +18,20 @@ const TextField:React.FC<TextFiledInterface> = (props) => {
             <input
                 value={props.value}
                 onChange={
-                    (e) => props.setValue(e.target.value)
+                    (e) =>
+                    {
+                        if (props.type === "text" || props.type === "password") {
+                            props.setStringValue!(e.target.value)
+                        } else {
+                            props.setNumberValue!(Number(e.target.value))
+                        }
+                    }
                 }
                 id={props.id}
                 type={props.type}
                 className="form-control w-1/5 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 placeholder={props.placeholder}
+                min="0"
             />
         </div>
     )

@@ -5,14 +5,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
 @Setter
 @Getter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "catalogue", schema = "data")
 public class Catalogue {
 
@@ -20,6 +20,8 @@ public class Catalogue {
     @Column
     private Long catalogue_id;
     @Column
-    private Long catalogue_owner;
+    private String catalogue_owner;
+    @Column
+    private String catalogue_name;
 
 }

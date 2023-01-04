@@ -22,6 +22,10 @@ const RegisterPage = () => {
             email: email,
             role: isBusiness? 'ROLE_BUSINESS' : 'ROLE_USER',
             referenceUserUsername: referenceUserUsername,
+            maximum_items: undefined,
+            cost: undefined,
+            number_of_items: undefined,
+
 
         }
         connection.postInfo("/register/user", user)
@@ -36,14 +40,14 @@ const RegisterPage = () => {
         <div className={"p-10 self-center content-center justify-center justify-self-center bg-gray-500 w-2/3 h-2/3"}>
         <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
             <div>
-                <TextField value={name} setValue={setName} id={"username"} type={'text'} placeholder={'Username'}/>
+                <TextField value={name} setNumberValue={undefined} setStringValue={setName} id={"username"} type={'text'} placeholder={'Username'}/>
             </div>
             <div>
-                <TextField value={password} setValue={setPassword} id={"password"} type={'text'} placeholder={'Password'}/>
+                <TextField value={password} setNumberValue={undefined} setStringValue={setPassword} id={"password"} type={'text'} placeholder={'Password'}/>
 
             </div>
             <div>
-                <TextField value={email} setValue={setEmail} id={"email"} type={'text'} placeholder={'Email'}/>
+                <TextField value={email} setNumberValue={undefined} setStringValue={setEmail} id={"email"} type={'text'} placeholder={'Email'}/>
             </div>
 
             <div>
@@ -52,7 +56,7 @@ const RegisterPage = () => {
                     <label htmlFor="default-checkbox"
                            className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Registering for business</label>
             </div>
-            { isBusiness && <TextField value={referenceUserUsername} setValue={setReferenceUserUsername} type={'text'} placeholder={'Enter reference user'} id={'reference_user'} />}
+            { isBusiness && <TextField setNumberValue={undefined} value={referenceUserUsername} setStringValue={setReferenceUserUsername} type={'text'} placeholder={'Enter reference user'} id={'reference_user'} />}
 
             <button
                 type="submit"
