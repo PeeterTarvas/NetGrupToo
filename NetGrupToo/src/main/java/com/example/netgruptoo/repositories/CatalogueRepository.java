@@ -1,7 +1,9 @@
 package com.example.netgruptoo.repositories;
 
-import com.example.netgruptoo.models.Catalogue;
+import com.example.netgruptoo.dbos.Catalogue;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -26,4 +28,9 @@ public interface CatalogueRepository extends JpaRepository<Catalogue, Integer> {
                             ) as ccrcci, data.catalogue as catalogue WHERE ccrcci.child_catalogue_id = catalogue.catalogue_id"""
             ,nativeQuery = true)
     List<Catalogue> findAllByParentId(Long parentId);
+
+    @Transactional
+    @Modifying
+    @Query(value = " DELETE FROM data.catalogue WHERE catalogue_owner = :catalogueOwner", nativeQuery = true)
+    void deleteCatalogueByCatalogue_owner(String catalogueOwner);
 }

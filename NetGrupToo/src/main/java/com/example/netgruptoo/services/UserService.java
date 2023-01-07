@@ -1,9 +1,9 @@
 package com.example.netgruptoo.services;
 
 
-import com.example.netgruptoo.models.ERole;
-import com.example.netgruptoo.models.User;
-import com.example.netgruptoo.payload.UserDto;
+import com.example.netgruptoo.dbos.ERole;
+import com.example.netgruptoo.dbos.User;
+import com.example.netgruptoo.dtos.UserDto;
 import com.example.netgruptoo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,7 +70,7 @@ public class UserService {
         return user;
     }
 
-    public void updateUserProductStatus(String username, Long items) {
+    public void updateUserItemStatus(String username, Long items) {
         User user = userRepository.findUserByUsername(username);
         user.setNumber_of_items(user.getNumber_of_items() + items);
         if (user.getMaximum_items() < user.getNumber_of_items() && user.getRole_name().equals(ERole.ROLE_BUSINESS)) {

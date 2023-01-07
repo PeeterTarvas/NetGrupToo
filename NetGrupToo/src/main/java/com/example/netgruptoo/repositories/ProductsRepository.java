@@ -1,7 +1,9 @@
 package com.example.netgruptoo.repositories;
 
-import com.example.netgruptoo.models.Product;
+import com.example.netgruptoo.dbos.Product;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -25,4 +27,9 @@ public interface ProductsRepository  extends JpaRepository<Product, Integer> {
         SELECT * FROM data.product WHERE product_owner = :user AND name LIKE CONCAT('%',:searchTerm,'%')
     """, nativeQuery = true)
     List<Product> getAllProductsByUserAndSearchTerm(String user, String searchTerm);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM data.product WHERE product_owner = :productOwner", nativeQuery = true)
+    void deleteAllByProduct_owner(String productOwner);
 }

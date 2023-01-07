@@ -1,12 +1,12 @@
 package com.example.netgruptoo.repositories;
 
-import com.example.netgruptoo.models.User;
+import com.example.netgruptoo.dbos.User;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -18,5 +18,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     Long findNextId();
 
     User findUserByUsername(String username);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM data.\"user\" WHERE username = :username", nativeQuery = true)
+    void deleteByUsername(String username);
 
 }
