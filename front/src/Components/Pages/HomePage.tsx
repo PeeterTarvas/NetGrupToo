@@ -1,10 +1,15 @@
 import Button from "../Comps/Button";
 import TextField from "../Comps/TextField";
-import {useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import UserDto from "../../Dtos/UserDto";
 import connectHandler from "../../Connect/ConnectHandler";
+import {useState} from "react";
 
+/**
+ * This is the login page/ banner page for the application where user can log in, if user is admin he/she will
+ * go to admins main page not regular/business users main page.
+ * If the user doesn't have a account he/she can register it in the register page.
+ */
 const HomePage = () => {
     const [name, setName] = useState<string>("")
     const [password, setPassword] = useState<string>("")
@@ -12,6 +17,12 @@ const HomePage = () => {
     const navigate = useNavigate();
 
 
+    /**
+     * This function is for getting user info after he/she has filled in the username and login pages.
+     * After user has been authenticated then he/she will be navigated to their main page.
+     * @param username of the user
+     * @param password of the user
+     */
     const onClickHandle = async (username:string, password:string) => {
         let userDto: UserDto = {
             username: name,
@@ -22,6 +33,7 @@ const HomePage = () => {
             maximum_items: undefined,
             cost: undefined,
             number_of_items: undefined,
+            items_status: undefined
         }
         const resp = await connectHandler.getInfo("/user", userDto)
         if (resp.status === 200) {
@@ -37,7 +49,7 @@ const HomePage = () => {
     }
 
     return (
-        <div className={"grid-rows-1 gap-5 self-center content-center p-10  justify-centre justify-self-center bg-gray-500 w-2/3 h-2/3"}>
+        <div className={"grid-rows-1 gap-5  self-center justify-self-center content-center p-10  justify-centre bg-gray-500 w-2/3 h-2/3"}>
 
             <div><TextField value={name} setNumberValue={undefined} setStringValue={setName} id={"username"} type={'text'} placeholder={'Username'}/></div>
             <div><TextField value={password} setNumberValue={undefined} setStringValue={setPassword} id={"password"} type={'password'} placeholder={'Password'}/></div>
@@ -47,6 +59,7 @@ const HomePage = () => {
             <div>If you don't have an account then register</div>
             <div onClick={() => navigate('/register')}> <Button id={"register"} name={"Register"}/></div>
         </div>
-    )
+
+            )
 }
 export default HomePage;

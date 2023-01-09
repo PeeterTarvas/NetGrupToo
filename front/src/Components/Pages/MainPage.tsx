@@ -10,7 +10,10 @@ import Product from "../Comps/Product";
 import path from "path";
 
 
-
+/**
+ * This is the main page of the user where he/she can see all the catalogues that are related to their root catalogue
+ * and all the products inside it.
+ */
 const MainPage = () => {
 
     let [catalogue, setCatalogue] = useState<CatalogueDto | undefined>(undefined);
@@ -21,10 +24,13 @@ const MainPage = () => {
     const [products, setProducts] = useState<ProductDto[]>()
     const [productSearchName, setProductSearchName] = useState("")
 
-    const handleBeforeUnload = () => {
+    const reload = () => {
         window.location.reload();
     };
 
+    /**
+     * This is the function who initializes the initial directory when the user is logged in.
+     */
     const getInitialDirectory  = useCallback(async () => {
         let data = await connection.getInfo("/catalogue/init", {username: user?.username})
             .then((resp) => resp)
@@ -32,7 +38,12 @@ const MainPage = () => {
         return data.data
     },[user])
 
+    /**
+     * This is the function that initializes the user and the current catalogue.
+     * It also gets the child catalogues and products of the current catalogue.
+     */
     useEffect( () => {
+
         setUser(location.state.user);
         if (location.state.catalogue === undefined) {
             getInitialDirectory().then(
@@ -44,15 +55,20 @@ const MainPage = () => {
         } else {
             setCatalogue(location.state.catalogue);
             connection.get(null, '/catalogue/get/' + catalogue?.catalogueId + '/catalogues', setChildCatalogues);
-            connection.get(null, "/product/get/" + catalogue?.catalogueId + "/products", setProducts)
+            connection.get(null, "/product/get/" + catalogue?.catalogueId + "/products", setProducts);
+            window.addEventListener('beforeunload', reload);
+            return () => {
+                window.removeEventListener('beforeunload', reload)
+            };
         }
-        window.addEventListener('beforeunload', handleBeforeUnload);
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload)
-        };
 
     }, [catalogue?.catalogueId, getInitialDirectory, location.state.catalogue, location.state.user])
 
+    /**
+     * This function realizes the catalogue navigation when the user clicks on the catalogue he/she wants to navigate to.
+     * @param catalogueName of the catalogue that we want to navigate to.
+     * @param user that has initialed the catalogue navigation.
+     */
     const onClickHandle = async (catalogueName: string, user: UserDto) => {
          await connection.getInfo("/catalogue/get", {
             catalogueName: catalogueName, username: user.username
@@ -68,7 +84,6 @@ const MainPage = () => {
 
     return (
         <div className={"w-full overflow-x-hidden h-full self-center justify-self-center"}>
-
             <form className={"w-1/3 h-auto self-center"} onSubmit={
                 (e) => {
                     const body = {
@@ -107,9 +122,12 @@ const MainPage = () => {
                 <div>
                 {user?.role === "ROLE_BUSINESS" ? (<>Cost: {(user?.cost)} </>) : ""}
                 </div>
-                <div className={"grid grid-cols-3 gap-3 m-4"}>
+                <div className={"grid grid-cols-4 gap-3 m-4"}>
                     <div onClick={() => navigate(-1)}>
                         <Button name={"Back"} id={"back"} />
+                    </div>
+                    <div onClick={reload}>
+                        <Button name={"Reload products and catalogues"} id={"Reload"}/>
                     </div>
                     <div
                         className={"w-full"}

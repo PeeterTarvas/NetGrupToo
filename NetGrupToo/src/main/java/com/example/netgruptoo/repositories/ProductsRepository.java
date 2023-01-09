@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * This class is for database operations for Products database table.
+ */
 @Repository
 public interface ProductsRepository  extends JpaRepository<Product, Integer> {
 
@@ -32,4 +35,11 @@ public interface ProductsRepository  extends JpaRepository<Product, Integer> {
     @Modifying
     @Query(value = "DELETE FROM data.product WHERE product_owner = :productOwner", nativeQuery = true)
     void deleteAllByProduct_owner(String productOwner);
+
+    @Query(value = "SELECT SUM(amount) FROM data.product WHERE product_owner = :username AND condition = :condition"
+            , nativeQuery = true)
+    Integer countUserItemsByStatus(String username, String condition);
+
+    @Query(value = "SELECT condition.condition FROM data.condition",nativeQuery = true)
+    List<String> getAllConditions();
 }

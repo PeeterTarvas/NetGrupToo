@@ -7,6 +7,9 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+/**
+ * This class is for database operations for CatalogueProductReference database table.
+ */
 @Repository
 public interface CatalogueProductReferenceRepository  extends JpaRepository<CatalogueProductReference, Integer> {
 

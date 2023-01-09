@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * This class is for database operations for User database table.
+ */
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 

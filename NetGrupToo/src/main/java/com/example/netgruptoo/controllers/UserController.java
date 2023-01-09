@@ -39,7 +39,7 @@ public class UserController {
      */
     @PostMapping("/register/user")
     public HttpStatus postUser(@RequestBody UserDto body) {
-            User user = userService.constructUserWithDto(body);
+            User user = userService.createUserWithDto(body);
             userRepository.saveAndFlush(user);
             return HttpStatus.OK;
     }

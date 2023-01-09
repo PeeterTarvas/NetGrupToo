@@ -2,12 +2,15 @@ import {useLocation, useNavigate} from "react-router-dom";
 import Button from "../Comps/Button";
 import TextField from "../Comps/TextField";
 import React, {useState} from "react";
-import {AxiosResponse} from "axios/index";
+import {AxiosResponse} from "axios";
 import connection from "../../Connect/ConnectHandler";
 import ProductDto from "../../Dtos/ProductDto";
 import UserDto from "../../Dtos/UserDto";
 import CatalogueDto from "../../Dtos/CatalogueDto";
 
+/**
+ * This is the form component where user can register he's/her products.
+ */
 const ProductForm = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,9 +23,10 @@ const ProductForm = () => {
     const user: UserDto = location.state.user
     const catalogue: CatalogueDto = (location.state.currentCatalogue);
 
-
-
-
+    /**
+     * This function creates a product based in input parameters to the user by sending a post request to back-end
+     * to create the new product.
+     */
     const createProduct = async () => {
         const newProduct: ProductDto = {
             name: productName,

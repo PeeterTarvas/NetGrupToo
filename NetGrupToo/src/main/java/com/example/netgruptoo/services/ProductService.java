@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -113,6 +114,21 @@ public class ProductService {
                 .description(productDto.getDescription())
                 .amount(productDto.getAmount())
                 .build();
+    }
+
+    /**
+     * This method gets the items status statistic for the user
+     * @param user that we want to get the items' status for
+     * @return a hashmap of item statuses where key is the condition and
+     * integer is how many items of that condition there are for the user
+     */
+    public HashMap<String, Integer> getItemsStatusForUser(User user) {
+        List<String> conditions = productsRepository.getAllConditions();
+        HashMap<String, Integer> itemsStatus = new HashMap<>();
+        conditions.forEach(
+                element -> itemsStatus.put(element, productsRepository.countUserItemsByStatus(user.getUsername(), element))
+        );
+        return itemsStatus;
     }
 
 }

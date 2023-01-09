@@ -6,6 +6,9 @@ import CatalogueForm from "./Pages/CatalogueForm";
 import ProductForm from "./Pages/ProductForm";
 import AdminPage from "./Pages/AdminPages/AdminPage";
 
+/**
+ * This class is for holding all the routs in the front-end.
+ */
 const Main = () => {
 
     return (

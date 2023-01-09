@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+/**
+ * This is the database table object for Catalogue table.
+ */
 @Builder
 @Setter
 @Getter

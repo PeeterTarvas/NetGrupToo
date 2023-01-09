@@ -3,6 +3,9 @@ package com.example.netgruptoo.dbos;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * This is the database table object for User table.
+ */
 @Builder
 @Setter
 @Getter

@@ -5,10 +5,11 @@ import {useLocation, useNavigate} from "react-router-dom";
 import UserDto from "../../Dtos/UserDto";
 import connection from "../../Connect/ConnectHandler";
 import CatalogueDto from "../../Dtos/CatalogueDto";
-import {AxiosResponse} from "axios";
-import userDto from "../../Dtos/UserDto";
 
 
+/**
+ * This is a form component that is used to create new catalogues.
+ */
 const CatalogueForm = () => {
     let [catalogueName, setCatalogueName] = useState("")
     const navigate = useNavigate();
@@ -16,11 +17,18 @@ const CatalogueForm = () => {
     const [parentCatalogue, setParentCatalogue] = useState(location.state.currentCatalogue);
     const [user, setUser] = useState<UserDto|undefined>();
 
+    /**
+     * When the component is initialized the user and current catalogue name is set.
+     */
     useEffect( () => {
         setUser(location.state.user);
         setCatalogueName(location.state.currentCatalogue);
     }, [location.state.currentCatalogue, location.state.user])
 
+    /**
+     * This function creates a new catalogue out of the variables set in the text field,
+     * then it sends that catalogue to back-end to be saved in the database.
+     */
     const createCatalogue = async () => {
         const newCatalogue: CatalogueDto = {
             username: user!.username,

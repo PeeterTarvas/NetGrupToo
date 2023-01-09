@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * This class is for database operations for Catalogue database table.
+ */
 @Repository
 public interface CatalogueRepository extends JpaRepository<Catalogue, Integer> {
 

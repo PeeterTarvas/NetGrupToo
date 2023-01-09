@@ -4,6 +4,9 @@ package com.example.netgruptoo.dbos;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * This is the database table object for CatalogueCatalogueReference table.
+ */
 @Builder
 @Setter
 @Getter

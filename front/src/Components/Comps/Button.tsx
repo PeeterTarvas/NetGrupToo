@@ -6,6 +6,10 @@ interface ButtonInterface {
     id: string,
 }
 
+/**
+ * This is a button component for the app.
+ * @param props is the interface that is ysed for passing name and id.
+ */
 const Button:React.FC<ButtonInterface> = (props) => {
 
     const navigate = useNavigate();

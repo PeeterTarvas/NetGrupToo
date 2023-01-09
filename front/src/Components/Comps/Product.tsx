@@ -2,6 +2,10 @@ import React from "react";
 import ProductDto from "../../Dtos/ProductDto";
 
 
+/**
+ * This is a Product component for the app.
+ * @param props is the interface that is ysed for passing interface params of the component.
+ */
 const Product:React.FC<ProductDto> = (props) => {
 
     return (

@@ -5,7 +5,9 @@ import React, {useState} from "react";
 import UserDto from "../../Dtos/UserDto";
 import connection from "../../Connect/ConnectHandler"
 
-
+/**
+ * This is a component for registering a user,
+ */
 const RegisterPage = () => {
 
     const [name, setName] = useState<string>("")
@@ -14,6 +16,10 @@ const RegisterPage = () => {
     const [isBusiness, setIsBusiness] = useState<boolean>(false)
     const [referenceUserUsername, setReferenceUserUsername] = useState<string>("");
 
+    /**
+     * This is a function that handles the user registering a new user.
+     * @param event
+     */
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const user: UserDto = {
@@ -25,8 +31,7 @@ const RegisterPage = () => {
             maximum_items: undefined,
             cost: undefined,
             number_of_items: undefined,
-
-
+            items_status: undefined
         }
         connection.postInfo("/register/user", user)
     }

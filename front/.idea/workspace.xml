@@ -5,26 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d82b3313-8534-4d1e-93a6-6ff799429804" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/controllers/CatalogueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/controllers/CatalogueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/controllers/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/models/Catalogue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/models/CatalogueCatalogueReference.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/models/CatalogueProductReference.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/models/Condition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/models/ERole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/models/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/payload/CatalogueDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/payload/ProductDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/payload/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/Catalogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/Catalogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/CatalogueCatalogueReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/CatalogueCatalogueReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/CatalogueProductReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/CatalogueProductReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dbos/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dtos/CatalogueDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dtos/CatalogueDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dtos/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dtos/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dtos/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/dtos/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/CatalogueCatalogueReferenceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/CatalogueCatalogueReferenceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/CatalogueProductReferenceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/CatalogueProductReferenceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/CatalogueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/CatalogueRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/ProductsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/services/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/services/CatalogueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/security/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/security/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/services/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGrupToo/src/main/java/com/example/netgruptoo/services/UserService.java" afterDir="false" />
     </list>
@@ -43,6 +38,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -119,6 +122,8 @@
       <workItem from="1672852314649" duration="33000" />
       <workItem from="1672852737463" duration="908000" />
       <workItem from="1673126261901" duration="270000" />
+      <workItem from="1673183234674" duration="6793000" />
+      <workItem from="1673261449778" duration="16315000" />
     </task>
     <servers />
   </component>

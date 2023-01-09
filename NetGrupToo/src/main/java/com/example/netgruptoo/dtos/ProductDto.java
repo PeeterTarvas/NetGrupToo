@@ -3,6 +3,9 @@ package com.example.netgruptoo.dtos;
 
 import lombok.*;
 
+/**
+ * This is a transfer object for Product class.
+ */
 @Builder
 @Setter
 @Getter

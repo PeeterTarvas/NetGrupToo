@@ -2,6 +2,11 @@ package com.example.netgruptoo.dtos;
 
 import lombok.*;
 
+import java.util.HashMap;
+
+/**
+ * This is a transfer object for User class.
+ */
 @Builder
 @Setter
 @Getter
@@ -15,5 +20,6 @@ public class UserDto {
     private Long maximum_items;
     private Long number_of_items;
     private Double cost;
+    private HashMap<String, Integer> items_status;
 
 }

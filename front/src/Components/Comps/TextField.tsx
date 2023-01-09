@@ -11,6 +11,10 @@ interface TextFiledInterface {
 
 }
 
+/**
+ * This is a text field component for the app.
+ * @param props of the text-field that are passed through the interface is extends.
+ */
 const TextField:React.FC<TextFiledInterface> = (props) => {
 
     return (
