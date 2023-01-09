@@ -44,7 +44,7 @@ CREATE TABLE data."user"
     maximum_items BIGINT NOT NULL DEFAULT 1000000,
     cost DECIMAL  NOT NULL DEFAULT 0,
     CONSTRAINT PK_user_id PRIMARY KEY (user_id),
-    CONSTRAINT FK_role_name FOREIGN KEY (role_name) REFERENCES roles(role_name)
+    CONSTRAINT FK_role_name FOREIGN KEY (role_name) REFERENCES data.roles(role_name)
         ON DELETE No Action  ON UPDATE CASCADE,
     CONSTRAINT AK_name_is_unique UNIQUE (username),
     CONSTRAINT AK_email UNIQUE (email),

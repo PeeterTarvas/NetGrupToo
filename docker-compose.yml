@@ -1,0 +1,66 @@
+version: '3.3'
+services:
+
+  frontend:
+    container_name: front-end
+    build:
+      dockerfile: ./front/Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1025M
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - net
+
+  backend:
+    container_name: back-end
+    build:
+      dockerfile: ./NetGrupToo/Dockerfile
+    ports:
+        - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - net
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=${DATASOURCE_USERNAME:-postgres}
+      - SPRING_DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD:-root}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+      - SPRING_PROFILES_ACTIVE=local
+      - AWS_REGION=local
+      - ENVIRONMENT=local
+      - DATASOURCE_USERNAME=${DATASOURCE_USERNAME:-postgres}
+      - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD:-root}
+
+  db:
+    image: postgres:latest
+    container_name: "postgres"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-root}
+      - POSTGRES_ROOT_PASSWORD=${POSTGRES_ROOT_PASSWORD:-postgres}
+
+    user: postgres
+    ports:
+      - "5632:5432"
+    healthcheck:
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    networks:
+      - net
+
+
+
+networks:
+  net:
+    driver: bridge
