@@ -40,4 +40,3 @@ VALUES ('Peeter', 'Storage');
 
 INSERT INTO data.catalogue_catalogue_reference(parent_catalogue_id, child_catalogue_id)
 VALUES (1,2);
-
