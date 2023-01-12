@@ -51,11 +51,11 @@ const ProductForm = () => {
             <div className={" p-8 w-5/6 h-5/6 bg-teal-900 self-center justify-self-center"}>
                 <form>
                     <div>
-                        <TextField value={productName}  setNumberValue={undefined} setStringValue={setProductName} id={"catalogueName"} type={'text'} placeholder={'Product.tsx Name'}/>
-                        <TextField value={picture} setNumberValue={undefined} setStringValue={setPicture} id={"catalogueName"} type={'text'} placeholder={'Picture link'}/>
-                        <TextField value={serialNumber} setNumberValue={undefined} setStringValue={setSerialNumber} id={"catalogueName"} type={'text'} placeholder={'Serial number'}/>
-                        <TextField value={description} setNumberValue={undefined} setStringValue={setDescription} id={"catalogueName"} type={'text'} placeholder={'Description'}/>
-                        <TextField value={amount} setNumberValue={setAmount} setStringValue={undefined} id={"catalogueName"} type={'number'} placeholder={'Set amount'}/>
+                        <TextField value={productName}  setNumberValue={undefined} setStringValue={setProductName} id={"catalogueName"} type={'text'} placeholder={'Name'}/>
+                        <TextField value={picture} setNumberValue={undefined} setStringValue={setPicture} id={"picture"} type={'text'} placeholder={'Picture link'}/>
+                        <TextField value={serialNumber} setNumberValue={undefined} setStringValue={setSerialNumber} id={"serialNumber"} type={'text'} placeholder={'Serial number'}/>
+                        <TextField value={description} setNumberValue={undefined} setStringValue={setDescription} id={"description"} type={'text'} placeholder={'Description'}/>
+                        <TextField value={amount} setNumberValue={setAmount} setStringValue={undefined} id={"amount"} type={'number'} placeholder={'Set amount'}/>
                         <div className={"grid grid-cols-3 "} role="group">
                             <button onClick={() => setCondition("GOOD")} type="button"
                                     className="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">

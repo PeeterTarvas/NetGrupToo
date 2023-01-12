@@ -51,7 +51,7 @@ const CatalogueForm = () => {
             <div className={" p-8 w-5/6 h-5/6 bg-teal-900 self-center justify-self-center"}>
             <form>
                 <div>
-                    <TextField setNumberValue={undefined} value={catalogueName} setStringValue={setCatalogueName} id={"catalogueName"} type={'text'} placeholder={'Catalogue Name'}/>
+                    <TextField setNumberValue={undefined} value={catalogueName} setStringValue={setCatalogueName} id={"catalogueName"} type={'text'} placeholder={'Catalogue name'}/>
                     <div onClick={(e) => {createCatalogue(); e.preventDefault()}}> <Button id={"register"} name={"Register"}/></div>
                 </div>
             </form>

@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d82b3313-8534-4d1e-93a6-6ff799429804" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../NetGroupToo/src/main/java/com/example/netgruptoo/dtos/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGroupToo/src/main/java/com/example/netgruptoo/dtos/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGroupToo/src/main/java/com/example/netgruptoo/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGroupToo/src/main/java/com/example/netgruptoo/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetGroupToo/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../NetGroupToo/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-    </list>
+    <list default="true" id="d82b3313-8534-4d1e-93a6-6ff799429804" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,6 +108,7 @@
       <workItem from="1673261449778" duration="16315000" />
       <workItem from="1673460050783" duration="1944000" />
       <workItem from="1673469466067" duration="1042000" />
+      <workItem from="1673553301457" duration="2720000" />
     </task>
     <servers />
   </component>
