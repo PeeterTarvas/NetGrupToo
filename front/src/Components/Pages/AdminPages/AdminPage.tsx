@@ -51,13 +51,13 @@ const AdminPage = () => {
                         username={user.username}
                         email={user.email}
                         role={user.role}
-                        maximum_items={user.maximum_items}
-                        number_of_items={user.number_of_items}
+                        maximumItems={user.maximumItems}
+                        numberOfItems={user.numberOfItems}
                         cost={user.cost}
                         password={user.password}
                         referenceUserUsername={user.referenceUserUsername}
                         onChange={setMaximumItems}
-                        items_status={user.items_status}
+                        itemsStatus={user.itemsStatus}
                         />
                         ) : ""
                     )
@@ -71,13 +71,13 @@ const AdminPage = () => {
                                     username={user.username}
                                     email={user.email}
                                     role={user.role}
-                                    maximum_items={user.maximum_items}
-                                    number_of_items={user.number_of_items}
+                                    maximumItems={user.maximumItems}
+                                    numberOfItems={user.numberOfItems}
                                     cost={user.cost}
                                     password={user.password}
                                     referenceUserUsername={user.referenceUserUsername}
                                     onChange={setMaximumItems}
-                                    items_status={user.items_status}
+                                    itemsStatus={user.itemsStatus}
                                 />
                             ) : ""
                         )

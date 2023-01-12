@@ -3,7 +3,7 @@
 #### Small warning
  - Front-end in front directory uses port 3000
  - Back-end in NetGroupToo directory uses port 8000
- - PostgresSql should be on port 8080
+ - PostgreSql should be on port 8080
  - In front-end if products/directories don't load after their creation use `Reload products and catalogues`
    button to reload the page
 
@@ -12,7 +12,7 @@
    - #### Java 17(minimum)
    - #### Node 16.18.10(minimum)
    - #### PostgresSQL 15.1
- - Start PostgresSQL on port 8080 with username: postgres, password: postgres, can be done inside IntelliJ idea easily
+ - Start PostgreSQL on port 8080 with username: postgres, password: postgres, can be done inside IntelliJ idea easily
  - Run `gradle build` in NetGroupToo directory(ik I misspelled Group in the application main class )
    - There might be a problem that the tests won't go through, because test run doesn't have database connection,
    so you can skip tests with the flag `-x test`

@@ -41,8 +41,8 @@ class UserControllerTest {
                 .role(String.valueOf(ERole.ROLE_USER))
                 .password("12")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(10L)
+                .numberOfItems(0L)
+                .maximumItems(10L)
                 .build();
     }
 
@@ -79,8 +79,8 @@ class UserControllerTest {
                 .role(String.valueOf(ERole.ROLE_USER))
                 .password("123")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(10L)
+                .numberOfItems(0L)
+                .maximumItems(10L)
                 .build();
         UserDto userDtoAdmin = UserDto.builder()
                 .username("Peeter4")
@@ -88,8 +88,8 @@ class UserControllerTest {
                 .role(String.valueOf(ERole.ROLE_ADMIN))
                 .password("1234")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(10L)
+                .numberOfItems(0L)
+                .maximumItems(10L)
                 .build();
         UserDto userDtoBusiness = UserDto.builder()
                 .username("Peeter5")
@@ -97,8 +97,8 @@ class UserControllerTest {
                 .role(String.valueOf(ERole.ROLE_BUSINESS))
                 .password("12345")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(10L)
+                .numberOfItems(0L)
+                .maximumItems(10L)
                 .referenceUserUsername("Peeter2")
                 .build();
         return List.of(userDto, userDto2, userDtoAdmin, userDtoBusiness);
@@ -123,12 +123,12 @@ class UserControllerTest {
                 .role(String.valueOf(ERole.ROLE_USER))
                 .password("12")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(100L)
+                .numberOfItems(0L)
+                .maximumItems(100L)
                 .build();
         userController.updateUserMaxItems(userDto);
         User user = userRepository.findUserByUsername("Peeter2");
-        assertEquals(user.getMaximum_items(),userDto.getMaximum_items());
+        assertEquals(user.getMaximum_items(),userDto.getMaximumItems());
     }
     @Test
     @Order(5)

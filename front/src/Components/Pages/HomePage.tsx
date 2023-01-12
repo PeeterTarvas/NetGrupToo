@@ -30,10 +30,10 @@ const HomePage = () => {
             email: undefined,
             role: undefined,
             referenceUserUsername: undefined,
-            maximum_items: undefined,
+            maximumItems: undefined,
             cost: undefined,
-            number_of_items: undefined,
-            items_status: undefined
+            numberOfItems: undefined,
+            itemsStatus: undefined
         }
         const resp = await connectHandler.getInfo("/user", userDto)
         if (resp.status === 200) {

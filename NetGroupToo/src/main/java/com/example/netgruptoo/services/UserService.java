@@ -45,10 +45,10 @@ public class UserService {
                 .email(user.getEmail())
                 .role(user.getRole_name().toString())
                 .cost(user.getCost())
-                .maximum_items(user.getMaximum_items())
-                .number_of_items(user.getNumber_of_items())
+                .maximumItems(user.getMaximum_items())
+                .numberOfItems(user.getNumber_of_items())
                 .referenceUserUsername(user.getReference_user_username())
-                .items_status(productService.getItemsStatusForUser(user))
+                .itemsStatus(productService.getItemsStatusForUser(user))
                 .build();
     }
 
@@ -59,9 +59,9 @@ public class UserService {
      */
     public List<UserDto> setUsersMaxItems(UserDto userDto) {
         User user = userRepository.findUserByUsername(userDto.getUsername());
-        user.setMaximum_items(userDto.getMaximum_items());
-        if (userDto.getMaximum_items() < userDto.getNumber_of_items()) {
-            user.setCost(0.01 * (userDto.getNumber_of_items() - userDto.getMaximum_items()));
+        user.setMaximum_items(userDto.getMaximumItems());
+        if (userDto.getMaximumItems() < userDto.getNumberOfItems()) {
+            user.setCost(0.01 * (userDto.getNumberOfItems() - userDto.getMaximumItems()));
         } else {
             user.setCost(0.00);
         }

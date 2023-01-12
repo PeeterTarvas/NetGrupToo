@@ -17,9 +17,9 @@ public class UserDto {
     private String email;
     private String role;
     private String referenceUserUsername;
-    private Long maximum_items;
-    private Long number_of_items;
+    private Long maximumItems;
+    private Long numberOfItems;
     private Double cost;
-    private HashMap<String, Integer> items_status;
+    private HashMap<String, Integer> itemsStatus;
 
 }

@@ -28,10 +28,10 @@ const RegisterPage = () => {
             email: email,
             role: isBusiness? 'ROLE_BUSINESS' : 'ROLE_USER',
             referenceUserUsername: referenceUserUsername,
-            maximum_items: undefined,
+            maximumItems: undefined,
             cost: undefined,
-            number_of_items: undefined,
-            items_status: undefined
+            numberOfItems: undefined,
+            itemsStatus: undefined
         }
         connection.postInfo("/register/user", user)
     }

@@ -14,8 +14,8 @@ const User:React.FC<(onChange)> = (props) => {
 
 
     const [businessUserBorder, setBusinessUserBorder] = useState<string>("");
-    const [maxItems, setMaxItems] = useState(props.maximum_items);
-    const [itemsMap, setItemsMap] = useState<Map<string, number>>(new Map(Object.entries(props.items_status!)))
+    const [maxItems, setMaxItems] = useState(props.maximumItems);
+    const [itemsMap, setItemsMap] = useState<Map<string, number>>(new Map(Object.entries(props.itemsStatus!)))
 
     /**
      * This function is for rounding numbers.
@@ -35,7 +35,7 @@ const User:React.FC<(onChange)> = (props) => {
             } else {
                 setBusinessUserBorder("");
             }
-        }, [props.role, props.cost, itemsMap, props.items_status]
+        }, [props.role, props.cost, itemsMap, props.itemsStatus]
     )
 
     return (
@@ -43,11 +43,11 @@ const User:React.FC<(onChange)> = (props) => {
             <div>Name: {props.username}</div>
             <div>Email: {props.email}</div>
             <div>Role: {props.role}</div>
-            <div>Number of free items: {props.maximum_items}</div>
-            <div>Number of items: {props.number_of_items}</div>
-            <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.number_of_items!} conditionName={"GOOD"} />
-            <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.number_of_items!} conditionName={"BAD"} />
-            <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.number_of_items!} conditionName={"BROKEN"}/>
+            <div>Number of free items: {props.maximumItems}</div>
+            <div>Number of items: {props.maximumItems}</div>
+            <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.numberOfItems!} conditionName={"GOOD"} />
+            <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.numberOfItems!} conditionName={"BAD"} />
+            <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.numberOfItems!} conditionName={"BROKEN"}/>
 
             <div>
                 {props.role === "ROLE_BUSINESS" ? (
@@ -66,10 +66,10 @@ const User:React.FC<(onChange)> = (props) => {
                                             email: props.email,
                                             role: props.role,
                                             referenceUserUsername: props.referenceUserUsername,
-                                            maximum_items: maxItems,
+                                            maximumItems: maxItems,
                                             cost: props.cost,
-                                            number_of_items: props.number_of_items,
-                                            items_status: props.items_status,
+                                            numberOfItems: props.numberOfItems,
+                                            itemsStatus: props.itemsStatus,
                                         }
                                         setMaxItems(Number(e.target.value));
                                         props.onChange(user).then(r => r);

@@ -5,7 +5,6 @@ import com.example.netgruptoo.controllers.ProductController;
 import com.example.netgruptoo.controllers.UserController;
 import com.example.netgruptoo.dbos.ERole;
 import com.example.netgruptoo.dbos.Product;
-import com.example.netgruptoo.dbos.User;
 import com.example.netgruptoo.dtos.CatalogueDto;
 import com.example.netgruptoo.dtos.ProductDto;
 import com.example.netgruptoo.dtos.UserDto;
@@ -57,8 +56,8 @@ public class ProductControllerTests {
                 .role(String.valueOf(ERole.ROLE_USER))
                 .password("12")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(1L)
+                .numberOfItems(0L)
+                .maximumItems(1L)
                 .build();
     }
 
@@ -162,8 +161,8 @@ public class ProductControllerTests {
                 .referenceUserUsername("Peeter2")
                 .password("12")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(10L)
+                .numberOfItems(0L)
+                .maximumItems(10L)
                 .build();
         userController.postUser(userDto);
         CatalogueDto catalogueDto = catalogueController.getInitialCatalogue(userDto.getUsername());
@@ -171,7 +170,7 @@ public class ProductControllerTests {
         UserDto finalUserDto = userDto;
         productDtos.forEach(element ->  productController.createProduct(element, catalogueDto.getCatalogueId(), finalUserDto.getUsername()));
         userDto = userController.getUser(userDto.getUsername(), userDto.getPassword()).getBody();
-        userDto.setMaximum_items(1L);
+        userDto.setMaximumItems(1L);
         List<UserDto> userDtos = userController.updateUserMaxItems(userDto);
         assertEquals(0.07, userDtos.get(userDtos.size() - 1).getCost());
 

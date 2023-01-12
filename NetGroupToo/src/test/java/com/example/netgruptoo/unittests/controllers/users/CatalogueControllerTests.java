@@ -48,8 +48,8 @@ public class CatalogueControllerTests {
                 .role(String.valueOf(ERole.ROLE_USER))
                 .password("12")
                 .cost((double) 0)
-                .number_of_items(0L)
-                .maximum_items(10L)
+                .numberOfItems(0L)
+                .maximumItems(10L)
                 .build();
     }
 

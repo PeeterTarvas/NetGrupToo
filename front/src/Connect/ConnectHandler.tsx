@@ -22,7 +22,7 @@ const get =
 
 /**
  * This is the simpler version of get function which uses this function as well.
- * This is used in cases where get function wont work
+ * This is used in cases where get function won't work
  * @param path of the request
  * @param body is the request params
  */

@@ -7,9 +7,9 @@ interface UserDto {
     role: string|undefined;
     password: string;
     referenceUserUsername: string|undefined;
-    maximum_items: number|undefined;
+    maximumItems: number|undefined;
     cost: number|undefined;
-    number_of_items: number|undefined;
-    items_status: Object|undefined;
+    numberOfItems: number|undefined;
+    itemsStatus: Object|undefined;
 }
 export default UserDto;

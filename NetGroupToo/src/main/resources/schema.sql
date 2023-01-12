@@ -18,7 +18,7 @@ DROP TABLE IF EXISTS data.condition CASCADE;
 
 CREATE TABLE data.roles
 (
-    role_id BIGSERIAL UNIQUE NOT NULL,
+    role_id BIGSERIAL NOT NULL,
     role_name varchar(20) NOT NULL,
     CONSTRAINT PK_role_id PRIMARY KEY (role_id),
     CONSTRAINT AK_role_name UNIQUE (role_name)
