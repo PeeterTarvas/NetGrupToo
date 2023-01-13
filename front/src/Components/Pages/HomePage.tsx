@@ -49,7 +49,7 @@ const HomePage = () => {
     }
 
     return (
-        <div className={"grid-rows-1 gap-5  self-center justify-self-center content-center p-10  justify-centre bg-gray-500 w-2/3 h-2/3"}>
+        <div className={"grid-rows-1 gap-5 self-center justify-self-center content-center p-10  justify-centre bg-gray-500 w-2/3 h-2/3"}>
 
             <div><TextField value={name} setNumberValue={undefined} setStringValue={setName} id={"username"} type={'text'} placeholder={'Username'}/></div>
             <div><TextField value={password} setNumberValue={undefined} setStringValue={setPassword} id={"password"} type={'password'} placeholder={'Password'}/></div>

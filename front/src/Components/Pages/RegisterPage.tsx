@@ -15,7 +15,8 @@ const RegisterPage = () => {
     const [email, setEmail] = useState<string>("")
     const [isBusiness, setIsBusiness] = useState<boolean>(false)
     const [referenceUserUsername, setReferenceUserUsername] = useState<string>("");
-
+    let [isCreated, setIsCreated] = useState(false);
+    let [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
     /**
      * This is a function that handles the user registering a new user.
      * @param event
@@ -33,7 +34,14 @@ const RegisterPage = () => {
             numberOfItems: undefined,
             itemsStatus: undefined
         }
-        connection.postInfo("/register/user", user)
+        const ans = connection.postInfo("/register/user", user)
+        setHasBeenSubmitted(true);
+        ans.then((a) => {
+        if (a.status === 200) {
+            setIsCreated(true);
+                }
+            }
+        )
     }
 
     const handleCheckbox = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,6 +85,12 @@ const RegisterPage = () => {
             </Link>
             </p>
         </form>
+            {   hasBeenSubmitted ? (
+                 isCreated ?
+                    (<div className={"text-green-400"}>New user has been registered!</div>) : (
+                        <div className={"text-red-400"}>Creation failed, username or email already exists!</div>)
+            ): ""
+            }
             </div>
     )
 }

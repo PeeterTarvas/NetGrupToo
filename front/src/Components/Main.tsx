@@ -19,7 +19,7 @@ const Main = () => {
              <Route path='main' element={<MainPage/>} />
              <Route path='catalogueForm' element={<CatalogueForm/>} />
              <Route path='productForm' element={<ProductForm/>} />
-                <Route path='adminMain' element={<AdminPage/>}/>
+             <Route path='adminMain' element={<AdminPage/>}/>
             </Route>
         </Routes>
 );

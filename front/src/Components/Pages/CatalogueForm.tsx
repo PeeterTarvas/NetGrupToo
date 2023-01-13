@@ -46,12 +46,13 @@ const CatalogueForm = () => {
 
 
     return (
-        <div className={"w-full h-full self-center justify-self-center"}>
+        <div className={"grid w-full h-full self-center justify-self-center"}>
             <div onClick={() =>navigate(-1)}><Button id={"Back"} name={"Back"}/></div>
-            <div className={" p-8 w-5/6 h-5/6 bg-teal-900 self-center justify-self-center"}>
+            <div className={" p-8 w-5/6 h-full justify-self-center"}>
             <form>
                 <div>
-                    <TextField setNumberValue={undefined} value={catalogueName} setStringValue={setCatalogueName} id={"catalogueName"} type={'text'} placeholder={'Catalogue name'}/>
+                    <TextField setNumberValue={undefined} value={catalogueName} setStringValue={setCatalogueName} id={"catalogueName"} type={'text'}
+                               placeholder={"Catalogue name"}/>
                     <div onClick={(e) => {createCatalogue(); e.preventDefault()}}> <Button id={"register"} name={"Register"}/></div>
                 </div>
             </form>

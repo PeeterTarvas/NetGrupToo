@@ -48,13 +48,14 @@ const ProductForm = () => {
     return (
         <div className={"grid w-full h-full self-center justify-self-center"}>
             <div onClick={() =>navigate(-1)}><Button id={"Back"} name={"Back"}/></div>
-            <div className={" p-8 w-5/6 h-5/6 bg-teal-900 self-center justify-self-center"}>
+            <div className={" p-8 w-5/6 h-5/6 self-center justify-self-center"}>
                 <form>
                     <div>
                         <TextField value={productName}  setNumberValue={undefined} setStringValue={setProductName} id={"catalogueName"} type={'text'} placeholder={'Name'}/>
                         <TextField value={picture} setNumberValue={undefined} setStringValue={setPicture} id={"picture"} type={'text'} placeholder={'Picture link'}/>
                         <TextField value={serialNumber} setNumberValue={undefined} setStringValue={setSerialNumber} id={"serialNumber"} type={'text'} placeholder={'Serial number'}/>
                         <TextField value={description} setNumberValue={undefined} setStringValue={setDescription} id={"description"} type={'text'} placeholder={'Description'}/>
+                        Amount
                         <TextField value={amount} setNumberValue={setAmount} setStringValue={undefined} id={"amount"} type={'number'} placeholder={'Set amount'}/>
                         <div className={"grid grid-cols-3 "} role="group">
                             <button onClick={() => setCondition("GOOD")} type="button"

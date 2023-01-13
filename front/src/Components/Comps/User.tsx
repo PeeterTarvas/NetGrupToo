@@ -44,7 +44,7 @@ const User:React.FC<(onChange)> = (props) => {
             <div>Email: {props.email}</div>
             <div>Role: {props.role}</div>
             <div>Number of free items: {props.maximumItems}</div>
-            <div>Number of items: {props.maximumItems}</div>
+            <div>Number of items: {props.numberOfItems}</div>
             <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.numberOfItems!} conditionName={"GOOD"} />
             <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.numberOfItems!} conditionName={"BAD"} />
             <ProgressBar  items={itemsMap!} numberOfItemsOverall={props.numberOfItems!} conditionName={"BROKEN"}/>
