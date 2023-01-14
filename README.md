@@ -3,7 +3,8 @@
 #### Small warning
  - Front-end in front directory uses port 3000
  - Back-end in NetGroupToo directory uses port 8000
- - PostgreSql should be on port 8080
+ - PostgreSql should be on port 8080, all the sql generating scripts are in NetGroupToo/src/main/resources
+   ,there is also a data.sql file in main directory which generates the whole database if needed.
  - In front-end if products/directories don't load after their creation use `Reload products and catalogues`
    button to reload the page
 
@@ -13,8 +14,9 @@
    - #### Node 16.18.10(minimum)
    - #### PostgresSQL 15.1
  - Start PostgreSQL on port 8080 with username: postgres, password: postgres, can be done inside IntelliJ idea easily
+ - PostgreSQL database scripts will trigger automatically when app is started
  - Run `gradle build` in NetGroupToo directory(ik I misspelled Group in the application main class )
-   - There might be a problem that the tests won't go through, because test run doesn't have database connection,
+   - If there is a problem that the tests won't go through, because test run doesn't have database connection,
    so you can skip tests with the flag `-x test`
    - Then run jar file `java -jar NetGroupToo/build/libs/NetGrupToo-0.0.1-SNAPSHOT.jar`
  - Run in front directory:  
