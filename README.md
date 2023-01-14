@@ -23,6 +23,7 @@
    - `npm install --silent`
    - `npm install react-scripts@5.0.1 -g --silent`
    - `npm start`
+ - After front-end compiles check localhost:3000
 
 ## Running with docker-compose
   - Need to have Docker installed and running
